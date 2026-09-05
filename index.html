@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DVORZHIK — личная страница</title>
+  <meta name="description" content="Личная страница Александра Дворжицкого (Дворжика): блог, шахматный тренер, хокку и другие проекты." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card-bg: #f8fafc;
+      --card-border: #e2e8f0;
+      --accent: #ca8a04;
+      --accent-hover: #a16207;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --link: #0284c7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- Шапка ---------- */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60px;
+      padding: 8px 10px;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    /* ---------- Герой ---------- */
+    .hero {
+      padding: 60px 0 30px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero .subtitle {
+      margin-top: 14px;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .tagline {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ---------- Сетка проектов ---------- */
+    .projects {
+      padding: 30px 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: var(--text-main);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 26px 24px;
+      text-decoration: none;
+      color: var(--text-main);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+
+    .card-icon {
+      font-size: 2.4rem;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+
+    .card .card-link {
+      margin-top: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      font-size: 0.95rem;
+    }
+
+    .card:hover .card-link {
+      color: var(--accent-hover);
+    }
+
+    /* ---------- Дополнительные ссылки ---------- */
+    .links-section {
+      padding: 20px 0 40px;
+    }
+
+    .links-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .links-list li a {
+      display: inline-block;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+
+    .links-list li a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #fff;
+    }
+
+    /* ---------- Подвал ---------- */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 24px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer .tags {
+      margin-top: 6px;
+      font-size: 0.85rem;
+    }
+
+    /* ---------- Адаптивность ---------- */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .hero {
+        padding: 40px 0 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">DVORZHIK<span>.</span></div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Герой -->
+    <section class="hero">
+      <h1>Александр <span>Дворжицкий</span></h1>
+      <p class="subtitle">
+        Личная страница — здесь собраны мои проекты: блог, шахматный тренер и хокку.
+      </p>
+      <p class="tagline">Нагария, Израиль · вайбкодинг · шахматы · поэзия</p>
+    </section>
+
+    <!-- Проекты -->
+    <section class="projects">
+      <h2 class="section-title">Мои проекты</h2>
+      <div class="grid">
+
+        <a class="card" href="blog/">
+          <div class="card-icon">📝</div>
+          <h3>Блог</h3>
+          <p>Архив публикаций из моего Telegram-канала: заметки о жизни, вайбкодинге, шахматах и не только.</p>
+          <div class="card-link">Перейти к блогу →</div>
+        </a>
+
+        <a class="card" href="chess/">
+          <div class="card-icon">♟️</div>
+          <h3>Шахматный тренер</h3>
+          <p>Обучение шахматам в Нагарии и онлайн: правила, побеждаем ботов, ставим мат, фотоархив турниров.</p>
+          <div class="card-link">Перейти к шахматам →</div>
+        </a>
+
+        <a class="card" href="haiku/">
+          <div class="card-icon">🍃</div>
+          <h3>Хокку</h3>
+          <p>Коллекция моих хокку и статья о японской поэзии «5-7-5, или Откуда у хлопца японская грусть».</p>
+          <div class="card-link">Перейти к хокку →</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Дополнительные ссылки -->
+    <section class="links-section">
+      <ul class="links-list">
+        <li><a href="https://t.me/dvorzhiki" target="_blank" rel="noopener noreferrer">Telegram-канал</a></li>
+        <li><a href="https://github.com/dvorzhik" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.dvorzhik.ru/" target="_blank" rel="noopener noreferrer">dvorzhik.ru</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© Aleksandr Dvorzhitckii</div>
+      <div class="tags">#вайбкодинг #шахматы #хокку #хайку #俳句 #5-7-5</div>
+    </div>
+  </footer>
+
+</body>
+</html>
