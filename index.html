@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DVORZHIK — личная страница</title>
+  <title>DVORZHIK - МОИ ПРОЕКТЫ</title>
   <meta name="description" content="Личная страница Александра Дворжицкого (Дворжика): блог, шахматный тренер, хокку и другие проекты." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,51 +82,23 @@
       color: var(--accent);
     }
 
-    /* ---------- Герой ---------- */
-    .hero {
-      padding: 60px 0 30px;
+    /* ---------- Заголовок (как в разделе «Шахматный тренер») ---------- */
+    .top-title-sec {
+      padding: 35px 0 20px;
       text-align: center;
     }
 
-    .hero h1 {
-      font-size: 2.6rem;
+    .top-title-sec h1 {
+      font-size: 2.2rem;
       font-weight: 800;
       letter-spacing: 0.5px;
       color: var(--text-main);
       text-transform: uppercase;
     }
 
-    .hero h1 span {
-      color: var(--accent);
-    }
-
-    .hero .subtitle {
-      margin-top: 14px;
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero .tagline {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
     /* ---------- Сетка проектов ---------- */
     .projects {
-      padding: 30px 0 20px;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 28px;
-      color: var(--text-main);
+      padding: 10px 0 40px;
     }
 
     .grid {
@@ -183,39 +155,6 @@
       color: var(--accent-hover);
     }
 
-    /* ---------- Дополнительные ссылки ---------- */
-    .links-section {
-      padding: 20px 0 40px;
-    }
-
-    .links-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .links-list li a {
-      display: inline-block;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 999px;
-      padding: 9px 18px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      color: var(--text-main);
-      transition: all 0.2s;
-    }
-
-    .links-list li a:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: #fff;
-    }
-
     /* ---------- Подвал ---------- */
     footer {
       border-top: 1px solid var(--card-border);
@@ -225,18 +164,19 @@
       font-size: 0.9rem;
     }
 
-    footer .tags {
-      margin-top: 6px;
-      font-size: 0.85rem;
+    /* ---------- Адаптивность ---------- */
+    @media (max-width: 820px) {
+      .top-title-sec h1 {
+        font-size: 1.6rem;
+      }
     }
 
-    /* ---------- Адаптивность ---------- */
-    @media (max-width: 640px) {
-      .hero h1 {
-        font-size: 1.9rem;
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 14px;
       }
-      .hero {
-        padding: 40px 0 20px;
+      .top-title-sec h1 {
+        font-size: 1.35rem;
       }
     }
   </style>
@@ -251,18 +191,13 @@
 
   <main class="container">
 
-    <!-- Герой -->
-    <section class="hero">
-      <h1>Александр <span>Дворжицкий</span></h1>
-      <p class="subtitle">
-        Личная страница — здесь собраны мои проекты: блог, шахматный тренер и хокку.
-      </p>
-      <p class="tagline">Нагария, Израиль · вайбкодинг · шахматы · поэзия</p>
-    </section>
+    <!-- Заголовок -->
+    <div class="top-title-sec">
+      <h1>DVORZHIK - МОИ ПРОЕКТЫ</h1>
+    </div>
 
     <!-- Проекты -->
     <section class="projects">
-      <h2 class="section-title">Мои проекты</h2>
       <div class="grid">
 
         <a class="card" href="blog/">
@@ -289,21 +224,11 @@
       </div>
     </section>
 
-    <!-- Дополнительные ссылки -->
-    <section class="links-section">
-      <ul class="links-list">
-        <li><a href="https://t.me/dvorzhiki" target="_blank" rel="noopener noreferrer">Telegram-канал</a></li>
-        <li><a href="https://github.com/dvorzhik" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.dvorzhik.ru/" target="_blank" rel="noopener noreferrer">dvorzhik.ru</a></li>
-      </ul>
-    </section>
-
   </main>
 
   <footer>
     <div class="container">
       <div>© Aleksandr Dvorzhitckii</div>
-      <div class="tags">#вайбкодинг #шахматы #хокку #хайку #俳句 #5-7-5</div>
     </div>
   </footer>
 
