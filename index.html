@@ -52,36 +52,6 @@
       padding: 0 20px;
     }
 
-    /* ---------- Шапка ---------- */
-    header {
-      background: rgba(255, 255, 255, 0.95);
-      border-bottom: 1px solid var(--card-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
-
-    .nav-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 60px;
-      padding: 8px 10px;
-    }
-
-    .brand {
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: 1px;
-      color: var(--text-main);
-      text-transform: uppercase;
-    }
-
-    .brand span {
-      color: var(--accent);
-    }
-
     /* ---------- Заголовок (как в разделе «Шахматный тренер») ---------- */
     .top-title-sec {
       padding: 35px 0 20px;
@@ -113,7 +83,7 @@
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: 16px;
-      padding: 26px 24px;
+      overflow: hidden;
       text-decoration: none;
       color: var(--text-main);
       transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
@@ -126,10 +96,20 @@
       color: var(--text-main);
     }
 
-    .card-icon {
-      font-size: 2.4rem;
-      line-height: 1;
-      margin-bottom: 14px;
+    .card-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #ffffff;
+      border-bottom: 1px solid var(--card-border);
+      display: block;
+    }
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 22px 24px 24px;
     }
 
     .card h3 {
@@ -183,12 +163,6 @@
 </head>
 <body>
 
-  <header>
-    <div class="container nav-wrap">
-      <div class="brand">DVORZHIK<span>.</span></div>
-    </div>
-  </header>
-
   <main class="container">
 
     <!-- Заголовок -->
@@ -201,24 +175,30 @@
       <div class="grid">
 
         <a class="card" href="blog/">
-          <div class="card-icon">📝</div>
-          <h3>Блог</h3>
-          <p>Архив публикаций из моего Telegram-канала: заметки о жизни, вайбкодинге, шахматах и не только.</p>
-          <div class="card-link">Перейти к блогу →</div>
+          <img class="card-img" src="images/blog.jpg" alt="Блог" loading="lazy" />
+          <div class="card-body">
+            <h3>Блог</h3>
+            <p>Архив публикаций из моего Telegram-канала: заметки о жизни, вайбкодинге, шахматах и не только.</p>
+            <div class="card-link">Перейти к блогу →</div>
+          </div>
         </a>
 
         <a class="card" href="chess/">
-          <div class="card-icon">♟️</div>
-          <h3>Шахматный тренер</h3>
-          <p>Обучение шахматам в Нагарии и онлайн: правила, побеждаем ботов, ставим мат, фотоархив турниров.</p>
-          <div class="card-link">Перейти к шахматам →</div>
+          <img class="card-img" src="images/chess.jpg" alt="Шахматный тренер" loading="lazy" />
+          <div class="card-body">
+            <h3>Шахматный тренер</h3>
+            <p>Обучение шахматам в Нагарии и онлайн: правила, побеждаем ботов, ставим мат, фотоархив турниров.</p>
+            <div class="card-link">Перейти к шахматам →</div>
+          </div>
         </a>
 
         <a class="card" href="haiku/">
-          <div class="card-icon">🍃</div>
-          <h3>Хокку</h3>
-          <p>Коллекция моих хокку и статья о японской поэзии «5-7-5, или Откуда у хлопца японская грусть».</p>
-          <div class="card-link">Перейти к хокку →</div>
+          <img class="card-img" src="images/haiku.jpg" alt="Хокку" loading="lazy" />
+          <div class="card-body">
+            <h3>Хокку</h3>
+            <p>Коллекция моих хокку и статья о японской поэзии «5-7-5, или Откуда у хлопца японская грусть».</p>
+            <div class="card-link">Перейти к хокку →</div>
+          </div>
         </a>
 
       </div>
