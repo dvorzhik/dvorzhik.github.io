@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DVORZHIK - ПРОЕКТЫ</title>
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="description" content="Личная страница Александра Дворжицкого (Дворжика): блог, шахматный тренер, хокку и другие проекты." />
+  <meta name="description" content="Личная страница Александра Дворжицкого (Дворжика): блог, шахматный тренер, падел, хокку и другие проекты." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -134,6 +134,14 @@
 
     .card:hover .card-link {
       color: var(--accent-hover);
+    }
+
+    /* Седьмая карточка: на десктопе сетка трёхколоночная, поэтому
+       одинокий элемент последнего ряда ставим по центру */
+    @media (min-width: 940px) {
+      .grid > .card:last-child:nth-child(3n + 1) {
+        grid-column: 2;
+      }
     }
 
     /* ---------- Подвал ---------- */
@@ -327,6 +335,15 @@
             <h3>Закаты</h3>
             <p>Небольшая подборка любительских фотографий с закатами.</p>
             <div class="card-link">Перейти к закатам →</div>
+          </div>
+        </a>
+
+        <a class="card" href="padel/">
+          <img class="card-img" src="images/padel.svg" alt="Падел" loading="lazy" />
+          <div class="card-body">
+            <h3>Падел</h3>
+            <p>Всё о паделе: история и мировой бум, правила, 10 основных ударов со схемами, обучающие видео и лучшие матчи.</p>
+            <div class="card-link">Перейти к паделу →</div>
           </div>
         </a>
 
